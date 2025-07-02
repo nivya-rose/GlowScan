@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+
+<h2>Welcome {{ request.user.first_name }}!</h2>
+
+ <div class="scan-section">
+    <h3>Start a New Scan</h3>
+    <form action="{% url 'start_scan' %}" method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      <input type="file" name="image" required>
+      <button type="submit" class="scan-btn">Scan Now</button>
+    </form>
+  </div>
+
+  {% if result %}
+    <div class="scan-result">
+      <h4>Scan Result:</h4>
+      <p>{{ result }}</p>
+    </div>
+  {% endif %}
+</div>
+
+{% endblock %}

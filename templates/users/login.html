@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Glow Scan{% endblock %}
+
+{% block content %}
+
+ <div class="form-container">
+      <p class="title">Welcome back!</p>
+      <form class="form" method="POST">
+      {% csrf_token %}
+      <input type="email" name="email" class="input" placeholder="Email" required>
+      <input type="password" name="password" class="input" placeholder="Password" required>
+      <button class="form-btn">Log in</button>
+      </form>
+      <p class="sign-up-label">
+      Don't have an account?<span class="sign-up-link"><a href="{%url 'register'%}" class="link-color">Sign up</a></span>
+      </p>
+    </div>
+{% endblock %}
+

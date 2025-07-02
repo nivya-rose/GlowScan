@@ -1,0 +1,30 @@
+.dashboard-container {
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.scan-section {
+  margin-top: 20px;
+}
+
+.scan-btn {
+  padding: 0.5rem 1rem;
+  background: #6c63ff;
+  border: none;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+h2 {
+  font-size: 2rem;
+  color: #333;
+  font-weight: 600;
+}
+
+.default-profile {
+  font-weight: bold;
+  font-size: 14px;
+}

@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Glow Scan{% endblock %}
+{% block content %}
+
+<div class="form-container">
+      <p class="title">Sign up and start glowing!</p>
+      <form class="form" method="POST">
+        {% csrf_token %}
+
+        <input type="text" name="first_name" class="input" placeholder="Enter your full name" 
+        value="{{ form.first_name.value|default_if_none:'' }}">
+        {% for error in form.full_name.errors %}
+            <p style="color: red;">{{ error }}</p>
+        {% endfor %}
+
+        <input type="email" name="email" class="input" placeholder="Email" 
+        value="{{ form.email.value|default_if_none:'' }}">
+        {% for error in form.email.errors %}
+            <p style="color: red;">{{ error }}</p>
+        {% endfor %}
+
+        <input type="password" class="input" placeholder="Password"
+        value="{{ form.password1.value|default_if_none:'' }}" name="password1">
+        {% for error in form.password1.errors %}
+            <p style="color: red;">{{ error }}</p>
+        {% endfor %}
+
+        <input type="password" class="input" placeholder="Confirm Password "
+        value="{{ form.password2.value|default_if_none:'' }}" name="password2">
+        {% for error in form.password2.errors %}
+            <p style="color: red;">{{ error }}</p>
+        {% endfor %}
+
+        <button class="form-btn">Register</button>
+      </form>
+
+      <p class="sign-up-label">
+        Already have an account?
+        <span class="sign-up-link"><a href="{%url 'login'%}" class="link-color">Login</a></span>
+      </p>
+    </div>
+
+{% endblock %}

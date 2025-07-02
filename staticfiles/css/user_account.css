@@ -1,0 +1,68 @@
+.form-user-account {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  background-color: white;
+  font-family:  sans-serif;
+}
+
+.title-user-account {
+  text-align: center;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  margin: 10px 0 30px 0;
+  font-size: 28px;
+  font-weight: 800;
+  color:teal
+}
+
+.form-group-ua input, select{
+    border-radius: 20px;
+    border: 1px solid #c0c0c0;
+    outline: 0 !important;
+    box-sizing: border-box;
+    padding: 12px 15px;
+    width: 100%;
+    color:rgb(115, 136, 136);
+
+}
+
+.form-group-ua label{
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: teal;
+    margin-left: 10px;
+}
+
+.form-btn-ua {
+    padding: 10px 15px;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    border-radius: 25px;
+    border: none;
+    background: teal;
+    color: white;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    width:100%;
+}
+
+.form-btn-ua:hover {
+  background-color: #005f5f;
+}
+
+.form-btn-ua:active {
+  box-shadow: none;
+}
+
+#preview-image {
+    display: block;
+    max-width: 150px;
+    border-radius: 8px;
+    box-shadow: 0 0 6px rgba(0,0,0,0.1);
+    margin-top: 10px;
+}

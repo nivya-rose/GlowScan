@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Glow Scan{% endblock %}
+{% block content %}
+
+<div class="form-container">
+  <p class="title">Complete your profile</p>
+  
+  <form class="form" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+
+   <!-- Profile Image -->
+<div class="form-group-ua image-upload-wrapper">
+  <label for="id_image">Profile Image</label>
+
+  <!-- Existing image -->
+  {% if profile.image %}
+    <div class="profile-image-box">
+      <img id="preview-image" src="{{ profile.image.url }}" alt="Current Profile Image">
+    </div>
+  {% else %}
+    <div class="profile-image-box">
+      <img id="preview-image" src="#" alt="No Image" style="display: none;">
+    </div>
+  {% endif %}
+
+  <!-- File input for new image -->
+  <input type="file" name="image" id="id_image" accept="image/*" onchange="previewImage(event)">
+
+  <!-- Live preview of selected image -->
+  <img id="preview-img" style="display: none; max-width: 150px; border-radius: 10px; margin-top: 10px;" alt="New Preview">
+
+  <!-- Error message -->
+  {% for error in form.image.errors %}
+    <p style="color: red;">{{ error }}</p>
+  {% endfor %}
+</div>
+
+    <!-- Date of Birth -->
+    <div class="form-group-ua">
+      {{ form.date_of_birth.label_tag }}
+      {{ form.date_of_birth }}
+      {% for error in form.date_of_birth.errors %}
+        <p style="color: red;">{{ error }}</p>
+      {% endfor %}
+    </div>
+
+    <!-- Height -->
+    <div class="form-group-ua">
+      {{ form.height.label_tag }}
+      {{ form.height }}
+      {% for error in form.height.errors %}
+        <p style="color: red;">{{ error }}</p>
+      {% endfor %}
+    </div>
+
+    <!-- Weight -->
+    <div class="form-group-ua">
+      {{ form.weight.label_tag }}
+      {{ form.weight }}
+      {% for error in form.weight.errors %}
+        <p style="color: red;">{{ error }}</p>
+      {% endfor %}
+    </div>
+
+    <!-- Skin Type -->
+    <div class="form-group-ua">
+      {{ form.skin_type.label_tag }}
+      {{ form.skin_type }}
+      {% for error in form.skin_type.errors %}
+        <p style="color: red;">{{ error }}</p>
+      {% endfor %}
+    </div>
+
+    <button class="form-btn-ua">Update</button>
+  </form>
+</div>
+
+{% endblock %}

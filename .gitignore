@@ -1,0 +1,27 @@
+# Byte-compiled / cache files
+__pycache__/
+*.py[cod]
+
+# Django SQLite database
+*.sqlite3
+db.sqlite3
+
+# Uploaded media
+/media/
+
+# Environment files
+.env
+.env/
+
+# Virtual environment
+venv/
+GlowScanEnv/
+
+# Node modules (if any)
+node_modules/
+
+# Static files collected
+/staticfiles/
+
+# Logs
+*.log
